@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reservas - Ciclismo de Salón</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-bicycle"></i> Reservas de Ciclismo de Salón</h1>
+        
+        <div class="app-container">
+            <!-- Formulario de Reserva -->
+            <div class="form-section">
+                <h2>Nueva Reserva</h2>
+                <form id="reservaForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bicicleta">Bicicleta #:</label>
+                        <select id="bicicleta" required>
+                            <option value="">Seleccione una bicicleta</option>
+                            <option value="1">Bicicleta 1</option>
+                            <option value="2">Bicicleta 2</option>
+                            <option value="3">Bicicleta 3</option>
+                            <option value="4">Bicicleta 4</option>
+                            <option value="5">Bicicleta 5</option>
+                            <option value="6">Bicicleta 6</option>
+                            <option value="7">Bicicleta 7</option>
+                            <option value="8">Bicicleta 8</option>
+                            <option value="9">Bicicleta 9</option>
+                            <option value="10">Bicicleta 10</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hora">Hora:</label>
+                        <select id="hora" required>
+                            <option value="">Seleccione un horario</option>
+                            <option value="07:00">07:00 AM</option>
+                            <option value="08:00">08:00 AM</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">01:00 PM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                            <option value="18:00">06:00 PM</option>
+                            <option value="19:00">07:00 PM</option>
+                            <option value="20:00">08:00 PM</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn-reservar">Reservar</button>
+                </form>
+            </div>
+            
+            <!-- Reporte de Reservas -->
+            <div class="report-section">
+                <h2>Reporte de Reservas</h2>
+                <div class="filtros">
+                    <label for="filtroFecha">Filtrar por fecha:</label>
+                    <input type="date" id="filtroFecha">
+                    <button id="btnFiltrar" class="btn-filtrar">Filtrar</button>
+                    <button id="btnExportar" class="btn-exportar">Exportar a CSV</button>
+                </div>
+                
+                <div class="reservas-list">
+                    <table id="tablaReservas">
+                        <thead>
+                            <tr>
+                                <th>Bicicleta</th>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservasBody">
+                            <!-- Las reservas se cargarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
